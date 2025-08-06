@@ -15,6 +15,14 @@ namespace sleepSystemAPI.Controllers
             _context = context;
         }
 
+        //GET: api/preguntas
+
+        [HttpGet]
+        public ActionResult<IEnumerable<Pregunta>> GetPreguntas()
+        {
+            return _context.Preguntas.ToList();
+        }
+
 
     }
 }
