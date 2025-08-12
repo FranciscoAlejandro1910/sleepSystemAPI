@@ -23,6 +23,19 @@ namespace sleepSystemAPI.Controllers
             return _context.Preguntas.ToList();
         }
 
+        //Get: api/preguntas/{id}
+
+        [HttpGet("{id}")]
+
+        public ActionResult<Pregunta> GetPregunta(int id)
+        {
+            var pregunta = _context.Preguntas.Find(id);
+            if (pregunta == null)
+            {
+                return NotFound();
+            }
+            return pregunta;
+        }
 
     }
 }
