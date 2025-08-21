@@ -1,0 +1,128 @@
+[
+  {
+    "idPregunta": 1,
+    "texto": "Durante el último mes, ¿cuál ha sido, normalmente, su hora de acostarse?",
+    "tipo": "Hora",
+    "itemPsqi": 4,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 2,
+    "texto": "¿Cuánto tiempo tarda en dormirse, normalmente, las noches del último mes?",
+    "tipo": "Tiempo",
+    "itemPsqi": 2,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 3,
+    "texto": "Durante el último mes, ¿a qué hora se ha levantado habitualmente por la mañana?",
+    "tipo": "Hora",
+    "itemPsqi": 4,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 4,
+    "texto": "¿Cuántas horas calcula que habrá dormido verdaderamente por cada noche durante el último mes?",
+    "tipo": "Hora",
+    "itemPsqi": 34,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 5,
+    "texto": "Durante el último mes, ¿con qué frecuencia ha tenido problemas para dormir a causa de: No poder conciliar el sueño en la primera media hora?",
+    "tipo": "Frecuencia",
+    "itemPsqi": 5,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 6,
+    "texto": "Durante el último mes, ¿con qué frecuencia ha tenido problemas para dormir a causa de: Despertarse durante la noche o de madrugada?",
+    "tipo": "Frecuencia",
+    "itemPsqi": 5,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 7,
+    "texto": "Durante el último mes, ¿con qué frecuencia ha tenido problemas para dormir a causa de: Tener que levantarse para ir al baño / tomar agua?",
+    "tipo": "Frecuencia",
+    "itemPsqi": 5,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 8,
+    "texto": "Durante el último mes, ¿con qué frecuencia ha tenido problemas para dormir a causa de: No poder respirar bien?",
+    "tipo": "Frecuencia",
+    "itemPsqi": 5,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 9,
+    "texto": "Durante el último mes, ¿con qué frecuencia ha tenido problemas para dormir a causa de: Toser o roncar ruidosamente?",
+    "tipo": "Frecuencia",
+    "itemPsqi": 5,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 10,
+    "texto": "Durante el último mes, ¿con qué frecuencia ha tenido problemas para dormir a causa de: Sentir frío?",
+    "tipo": "Frecuencia",
+    "itemPsqi": 5,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 11,
+    "texto": "Durante el último mes, ¿con qué frecuencia ha tenido problemas para dormir a causa de: Sentir demasiado calor?",
+    "tipo": "Frecuencia",
+    "itemPsqi": 5,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 12,
+    "texto": "Durante el último mes, ¿con qué frecuencia ha tenido problemas para dormir a causa de: Tener pesadillas o malos sueños?",
+    "tipo": "Frecuencia",
+    "itemPsqi": 5,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 13,
+    "texto": "Durante el último mes, ¿con qué frecuencia ha tenido problemas para dormir a causa de: Sufrir dolores?",
+    "tipo": "Frecuencia",
+    "itemPsqi": 5,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 14,
+    "texto": "Durante el último mes, ¿cómo valoraría en conjunto, la calidad de su sueño?",
+    "tipo": "Abierta",
+    "itemPsqi": 1,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 15,
+    "texto": "Durante el último mes, ¿cuántas veces habrá tomado medicinas (por su cuenta o recetadas por el médico) para dormir?",
+    "tipo": "Frecuencia",
+    "itemPsqi": 6,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 16,
+    "texto": "Durante el último mes, ¿cuántas veces ha sentido somnolencia mientras conducía, comía o desarrollaba alguna otra actividad?",
+    "tipo": "Frecuencia",
+    "itemPsqi": 7,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 17,
+    "texto": "Durante el último mes, ¿ha representado para usted mucho problema el tener ánimos para realizar alguna de las actividades detalladas en la pregunta anterior?",
+    "tipo": "Abierta",
+    "itemPsqi": 7,
+    "respuesta": []
+  },
+  {
+    "idPregunta": 18,
+    "texto": "¿Duerme usted solo o acompañado?",
+    "tipo": "Abierta",
+    "itemPsqi": 0,
+    "respuesta": []
+  }
+]

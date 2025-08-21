@@ -1,17 +1,23 @@
 using Microsoft.EntityFrameworkCore;
 using sleepSystemAPI.Data;
 using sleepSystemAPI.Models;
+using sleepSystemAPI.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Registro del contexto de base de datos
+builder.Services.AddDbContext<SleepSystemContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Registro de servicios para inyección de dependencias
+builder.Services.AddScoped<PsqiCalculator>();
+builder.Services.AddScoped<IEvaluacionService, EvaluacionService>();
+
+// Otros servicios
 builder.Services.AddControllers();
 
-
-
-//CORS
+// Configuración de CORS (si lo necesitas)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirTodo", policy =>
@@ -28,14 +34,6 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
-
-
-
-
-
-builder.Services.AddDbContext<SleepSystemContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
