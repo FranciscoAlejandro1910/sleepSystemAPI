@@ -11,9 +11,9 @@ public partial class Respuesta
 
     public int PreguntaId { get; set; }
 
-    public string Respuesta1 { get; set; } = null!;
+    public string? Respuesta1 { get; set; } 
 
-    public virtual Pregunta Pregunta { get; set; } = null!;
+    public virtual Pregunta? Pregunta { get; set; } 
 
-    public virtual Usuario Usuario { get; set; } = null!;
+    public virtual Usuario? Usuario { get; set; } 
 }

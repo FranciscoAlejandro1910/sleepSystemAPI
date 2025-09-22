@@ -64,17 +64,25 @@ namespace sleepSystemAPI.Services
 
         }
 
+        private double ParseHorasDormidas(string? horasDormidasStr)
+        {
+            if (string.IsNullOrEmpty(horasDormidasStr))
+                return 0;
+
+            return horasDormidasStr.Trim() switch
+            {
+                "< 5 horas" => 4.5,
+                "5 - 6 horas" => 5.5,
+                "6 - 7 horas" => 6.5,
+                "> 7 horas" => 7.5,
+                _ => double.TryParse(horasDormidasStr, System.Globalization.CultureInfo.InvariantCulture, out var val) ? val : 0
+            };
+        }
+
         private int CalcularComponente3(List<RespuestaDto> respuestas)
         {
-            // Busca la respuesta de la pregunta 4 (horas dormidas)
             var horasDormidasStr = respuestas.FirstOrDefault(r => r.preguntaId == 4)?.texto;
-
-            if (string.IsNullOrEmpty(horasDormidasStr))
-                return 0; // O maneja el error como prefieras
-
-            double horasDormidas;
-            if (!double.TryParse(horasDormidasStr, System.Globalization.CultureInfo.InvariantCulture, out horasDormidas))
-                return 0; // O maneja el error como prefieras
+            double horasDormidas = ParseHorasDormidas(horasDormidasStr);
 
             if (horasDormidas >= 7)
                 return 0;
@@ -88,26 +96,22 @@ namespace sleepSystemAPI.Services
 
         private int CalcularComponente4(List<RespuestaDto> respuestas)
         {
-            // Obtén las horas como TimeSpan
             var acostarse = respuestas.FirstOrDefault(r => r.preguntaId == 1)?.texto;
             var levantarse = respuestas.FirstOrDefault(r => r.preguntaId == 3)?.texto;
             var horasDormidasStr = respuestas.FirstOrDefault(r => r.preguntaId == 4)?.texto;
 
             if (string.IsNullOrEmpty(acostarse) || string.IsNullOrEmpty(levantarse) || string.IsNullOrEmpty(horasDormidasStr))
-                return 0; // O maneja el error como prefieras
+                return 0;
 
-            // Parseo de horas
             var horaAcostarse = TimeSpan.Parse(acostarse);
             var horaLevantarse = TimeSpan.Parse(levantarse);
 
-            // Si la hora de levantarse es menor, significa que pasó la medianoche
             double horasEnCama = (horaLevantarse - horaAcostarse).TotalHours;
             if (horasEnCama < 0)
                 horasEnCama += 24;
 
-            double horasDormidas = double.Parse(horasDormidasStr, System.Globalization.CultureInfo.InvariantCulture);
+            double horasDormidas = ParseHorasDormidas(horasDormidasStr);
 
-            // Eficiencia habitual del sueño
             double eficiencia = (horasDormidas / horasEnCama) * 100;
 
             if (eficiencia >= 85)
@@ -116,9 +120,9 @@ namespace sleepSystemAPI.Services
                 return 1;
             else if (eficiencia >= 65)
                 return 2;
-               else
-                   return 3;
-           }
+            else
+                return 3;
+        }
 
         private int CalcularComponente5(List<RespuestaDto> respuestas)
         {

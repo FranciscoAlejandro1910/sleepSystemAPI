@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using sleepSystemAPI.Models;
 using sleepSystemAPI.Models.Dtos;
 using sleepSystemAPI.Services;
@@ -18,7 +19,11 @@ namespace sleepSystemAPI.Controllers
             _context = context;
         }
 
-        
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Evaluacione>>> GetEvaluacion()
+        {
+            return await _context.Evaluaciones.ToListAsync();
+        }
 
         // POST: api/evaluaciones
         [HttpPost]
