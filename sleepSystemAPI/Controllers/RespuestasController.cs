@@ -16,6 +16,14 @@ namespace sleepSystemAPI.Controllers
             _context = context;
         }
 
+
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Respuesta>>> GetRespuestas()
+        {
+            return await Task.FromResult(_context.Respuestas.ToList());
+        }
+
         [HttpPost]
         public async Task<ActionResult<Respuesta>> PostRespuesta(Respuesta respuesta)
         {
@@ -50,5 +58,8 @@ namespace sleepSystemAPI.Controllers
 
             return Ok(new { mensaje = "Respuestas guardadas correctamente", cantidad = respuestas.Count });
         }
+
+
+        
     }
 }
